@@ -1,0 +1,47 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Runtime logs and generated files
+*.log
+downloads/
+
+# Local secrets and environment-specific config
+config/api_keys.json
+config/app_settings.json
+config/discord_bot.json
+config/workspace_store.sqlite3*
+config/smart_home.*
+config/ppt_template_cache/
+config/.bootstrap_done
+config/certs/
+memory/long_term.json
+
+# Local test/debug artifacts
+_run.out.txt
+_run.err.txt
+_discord_live_test.txt
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Build / packaging artifacts
+build/
+dist/
+*.spec
+*.exe
+*.msi
+*.pkg
+*.toc
+*.pyz
+*.zip
+*.whl

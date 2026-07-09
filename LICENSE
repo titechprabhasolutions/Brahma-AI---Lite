@@ -1,0 +1,53 @@
+Brahma Source-Available License
+Version 1.0
+
+Copyright (c) 2026 Suryaansh Tiwari
+
+This software and its source code are provided under the terms below.
+This is not an open source license as defined by the Open Source Initiative.
+
+1. Permission granted
+
+You may:
+
+- Use the software for personal, educational, and internal business purposes.
+- Study, inspect, and modify the source code for your own use.
+- Share unmodified copies of the software as long as you keep this license,
+  preserve all copyright notices, and do not remove Brahma branding.
+- Deploy the software privately within your own environment.
+
+2. Restrictions
+
+You may not, without prior written permission from Suryaansh Tiwari:
+
+- Rebrand, rename, or republish the software as your own product.
+- Remove, obscure, or replace Brahma branding, logos, attributions, or notices.
+- Distribute modified versions publicly under a different name or identity.
+- Claim authorship, ownership, sponsorship, or endorsement of the software.
+- Use the Brahma name, logo, or related marks in a way that suggests
+  affiliation or endorsement beyond this license.
+
+3. Commercial use
+
+Commercial use is permitted only if it does not violate the restrictions above
+and does not involve rebranding, resale as a competing product, or misrepresenting
+the origin of the software.
+
+4. Termination
+
+Any violation of this license automatically terminates your rights under it.
+You must immediately stop using, distributing, or modifying the software upon
+termination unless you obtain written permission from the copyright holder.
+
+5. Warranty disclaimer
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+
+6. Limitation of liability
+
+IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM,
+DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR
+OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+OR OTHER DEALINGS IN THE SOFTWARE.
