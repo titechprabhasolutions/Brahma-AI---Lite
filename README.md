@@ -117,10 +117,3 @@ git push origin HEAD
 
 If `git push` fails due to credentials, use your normal Git auth flow (SSH keys, PAT, or credential manager) and re-run the push command.
 
----
-
-If you'd like, I can also:
-
-- Wire the Buildonaut explorer to show the real project files and add in-UI editor actions.
-- Add automated `npm install` when missing (ask before running long installs).
-- Push the README change to the remote for you (I can attempt a `git push` now). 
