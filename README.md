@@ -1,72 +1,80 @@
 <p align="center">
-  <img src="assets/Brahma_Lite_Logo.png" alt="Brahma AI - Lite" width="240" />
+  <img src="assets/Brahma_Lite_Logo.png" alt="Brahma AI - Lite" width="260" />
 </p>
 
 <h1 align="center">Brahma AI - Lite</h1>
 
 <p align="center">
-  <strong>Source-available Windows desktop AI assistant</strong> for voice, automation, productivity, and premium desktop workflows.
+  <strong>Premium Windows desktop AI assistant</strong> for voice, automation, productivity, and intelligent workflows.
 </p>
 
 <p align="center">
-  <a href="#features"><img src="https://img.shields.io/badge/features-voice%20AI%20%7C%20automation-blue?style=for-the-badge" alt="Features" /></a>
+  <a href="#overview"><img src="https://img.shields.io/badge/experience-premium-blue?style=for-the-badge" alt="Premium Experience" /></a>
   <a href="#getting-started"><img src="https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey?style=for-the-badge" alt="Windows" /></a>
-  <a href="#how-it-works"><img src="https://img.shields.io/badge/architecture-modern-green?style=for-the-badge" alt="Architecture" /></a>
+  <a href="#how-it-works"><img src="https://img.shields.io/badge/ai-voice%20%2B%20automation-green?style=for-the-badge" alt="AI + Automation" /></a>
 </p>
 
 ---
 
 ## Overview
 
-Brahma AI - Lite delivers a polished AI assistant experience for Windows power users. It blends voice and typed chat with automation, productivity, office workflows, and intelligent screen-aware actions.
+Brahma AI - Lite is a premium desktop assistant designed for Windows power users. It unites voice and text input with intelligent automation, productivity workflows, document generation, and adaptive screen-aware actions.
 
-- Voice & text chat with Gemini and OpenRouter fallback
-- Startup daily briefing with seamless interruption support
-- Windows automation for apps, files, browser actions, and system control
-- Office workflow generation for PowerPoint, spreadsheets, Word, and PDF
-- Built-in website generation and Buildonaut studio support
-- Discord collaboration, notifications, reminders, and meeting assistance
+- Live voice and text interaction via Gemini with OpenRouter fallback
+- Automatic daily briefing with interruption-aware audio playback
+- Desktop automation for apps, windows, files, and browser workflows
+- Office content generation for PowerPoint, Word, spreadsheets, and PDF
+- Built-in website creation support through Buildonaut studio
+- Discord collaboration, reminders, meeting assistant, and notifications
+
+## Why It’s Premium
+
+- Responsive UI with rich task/workspace feedback
+- Seamless AI and voice integration for desktop productivity
+- Modular tool-driven architecture for clean extension
+- Robust fallback handling to keep the assistant available
+- Local-first configuration with secure credentials storage
 
 ## Features
 
 ### Intelligent Assistant
 
-- Voice and typed conversation in one desktop experience
-- Daily briefing playback at startup, delivered with premium TTS
-- Briefing interruption: new user commands stop audio instantly
-- Gemini-first live AI with OpenRouter fallback for reliability
+- Unified voice + typed conversation experience
+- Startup daily briefing with premium Edge TTS delivery
+- Instant briefing interruption when a new message arrives
+- Gemini-first live AI with OpenRouter fallback support
 
 ### Automation & Productivity
 
-- Open apps, control windows, and automate desktop tasks
-- Browser automation using Playwright for web workflows
-- Screen analysis and content extraction from screenshots or camera
-- File handling, document generation, and utility workflows
+- Open and control Windows applications and system actions
+- Browser automation with Playwright for web workflows
+- Screen inspection and contextual content extraction
+- File and document automation for fast productivity
 
 ### Office & Content Tools
 
-- Create PowerPoint slides and templated presentations
-- Generate spreadsheets and Word documents on demand
-- Export reports as PDFs with polished layouts
-- Launch website and landing page generation from the same app
+- Generate PowerPoint decks and presentation content
+- Create spreadsheets and Word documents quickly
+- Export polished reports as PDF files
+- Build landing pages and websites from within the app
 
 ### Integrations
 
-- Discord bridge for remote input and chat
-- Local API key management for Gemini + OpenRouter
-- Configurable app settings for voice, notifications, and startup
+- Discord bridge for remote commands and chat
+- Local credential management for Gemini and OpenRouter
+- Configurable voice, notifications, startup, and UI preferences
 
 ## How It Works
 
-Brahma AI - Lite is built around a desktop runtime, a responsive UI, and an AI-backed session handler.
+Brahma AI - Lite is built on a layered desktop architecture that separates UI, AI session management, and tool execution.
 
-- `main.py` starts the app, shows the UI, and runs `BrahmaLive`.
-- `BrahmaLive` connects to Gemini live audio sessions and sends typed or spoken commands.
-- The app uses `actions/` as tool modules for automation, document creation, web search, meeting support, and system control.
-- `AttentionMonitor` listens for notifications, toasts, and external events, then speaks alerts through Edge TTS.
-- `daily_briefing.py` composes the morning briefing text and plays it after boot.
-- The UI in `ui.py` provides the command bar, workspace results, and interactive dashboard controls.
-- If Gemini fails or rate-limits, OpenRouter is used as a fallback so the assistant stays responsive.
+- `main.py` initializes the application, launches the UI, and manages the AI runtime.
+- `BrahmaLive` owns the live AI session, audio queues, and command routing.
+- `actions/` contains modular tools for automation, document generation, notifications, meetings, and search.
+- `AttentionMonitor` captures external events and notification text, then speaks alerts using Edge TTS.
+- `daily_briefing.py` constructs the morning briefing text and triggers playback after startup.
+- `ui.py` provides a polished Qt-based interface with command entry, workspace cards, and status feedback.
+- `or_client.py` provides OpenRouter fallback support when Gemini is unavailable or rate-limited.
 
 ## Getting Started
 
@@ -74,9 +82,9 @@ Brahma AI - Lite is built around a desktop runtime, a responsive UI, and an AI-b
 
 - Windows 10 or Windows 11
 - Python 3.11 or 3.12
-- `git` installed
+- Git installed
 - Gemini API key
-- Optional OpenRouter API key
+- OpenRouter API key (optional, recommended for fallback resilience)
 
 ### 1. Clone the repository
 
@@ -85,7 +93,7 @@ git clone https://github.com/titechprabhasolutions/Brahma-AI---Lite.git
 cd "Brahma AI - Lite"
 ```
 
-### 2. Create and activate a Python virtual environment
+### 2. Create a virtual environment
 
 ```powershell
 python -m venv .venv
@@ -99,9 +107,9 @@ pip install -r requirements.txt
 playwright install
 ```
 
-### 4. Add your API keys
+### 4. Configure API keys
 
-Create `config/api_keys.json` with your keys:
+The app loads keys from `config/api_keys.json`. Create this file if it does not already exist.
 
 ```json
 {
@@ -113,26 +121,26 @@ Create `config/api_keys.json` with your keys:
 #### Gemini API Key
 
 - Create a Google Cloud or Gemini account
-- Enable Gemini API access and generate an API key
-- Paste the key into `gemini_api_key`
+- Enable Gemini API access for your project
+- Generate an API key and add it under `gemini_api_key`
 
-#### OpenRouter API Key (optional)
+#### OpenRouter API Key (recommended)
 
-- Sign up at https://openrouter.ai
-- Generate an API key starting with `sk-or-`
-- Add it to `openrouter_api_key`
+- Register at https://openrouter.ai
+- Generate an `sk-or-` API key
+- Add it under `openrouter_api_key`
 
-### 5. Configure optional Discord integration
+### 5. Optional: Configure Discord integration
 
-If you want Discord support, fill `config/discord_bot.json` with your bot credentials and server settings.
+To enable Discord bridging, populate `config/discord_bot.json` with your bot credentials and connection settings.
 
-### 6. Launch the app
+### 6. Start the app
 
 ```powershell
 python main.py
 ```
 
-For a silent Windows launch, run:
+For a cleaner Windows launch without console output:
 
 ```powershell
 start_brahma.vbs
@@ -141,34 +149,28 @@ start_brahma.vbs
 ## Configuration
 
 - `config/api_keys.json` — Gemini and OpenRouter credentials
-- `config/app_settings.json` — app preferences, voice settings, startup behavior
+- `config/app_settings.json` — voice, UI, startup, and automation settings
 - `config/discord_bot.json` — Discord bridge settings
-
-## Premium Setup Notes
-
-- Keep your `.venv` environment active when running the app
-- Use `start_brahma.vbs` for a cleaner Windows startup experience
-- Update `app_settings.json` to enable startup briefing, auto-launch, and voice preferences
 
 ## Project Structure
 
-- `main.py` — core runtime, AI session management, and engine glue
-- `ui.py` — desktop interface and workspace controls
-- `actions/` — modular tools for automation, messaging, document workflows, and more
-- `config/` — local key storage, app preferences, and runtime state
-- `tests/` — automated test coverage for controller and workflow behavior
+- `main.py` — core runtime, AI session orchestration, and startup flow
+- `ui.py` — polished Qt interface, workspace cards, and controls
+- `actions/` — modular tools for automation and AI workflows
+- `config/` — local settings, API keys, and runtime configuration
+- `tests/` — validation and integration tests for core features
 
 ## Recent Updates
 
 ### 2026-07-19
 
-- Daily briefing now plays automatically at startup.
-- Local TTS unified to the same male Edge voice for alerts, briefing, and notifications.
-- User messages sent during briefing now interrupt the audio and receive immediate attention.
-- Gesture HUD redesigned for premium control with hand landmark navigation.
-- Cursor mapping fixes improved desktop reach and direction accuracy.
-- Idle speech prompts added for better engagement.
-- Updated testing for Buildonaut controller workflows.
+- Restored automatic daily briefing playback at startup.
+- Unified local TTS output to the same premium male Edge voice.
+- Added briefing interruption support for immediate user response.
+- Redesigned gesture HUD for premium hand landmark control.
+- Improved cursor mapping for better desktop reach and direction.
+- Added idle speech prompts for proactive engagement.
+- Enhanced controller tests for Buildonaut workflow coverage.
 
 ## Community
 
@@ -177,11 +179,11 @@ start_brahma.vbs
 
 ## License
 
-This project is distributed under the custom Brahma Source-Available License. See `LICENSE` for full terms and `TRADEMARK.md` for branding rules.
+This project is licensed under a custom source-available license. See `LICENSE` for full terms and `TRADEMARK.md` for branding details.
 
-## Maintainer
+## Maintained by
 
-Suryaansh Tiwari
+- Suryaansh Tiwari
 
-If you build on top of Brahma AI - Lite, preserve attribution and keep any secrets out of the repository.
+Please preserve attribution and keep credentials secure when building on top of Brahma AI - Lite.
 
