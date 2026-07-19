@@ -5,80 +5,134 @@
 <h1 align="center">Brahma AI - Lite</h1>
 
 <p align="center">
-  <strong>Source-available Windows desktop AI assistant</strong> for voice, automation, productivity, and real-time workflows.
+  <strong>Source-available Windows desktop AI assistant</strong> for voice, automation, productivity, and premium desktop workflows.
 </p>
 
 <p align="center">
   <a href="#features"><img src="https://img.shields.io/badge/features-voice%20AI%20%7C%20automation-blue?style=for-the-badge" alt="Features" /></a>
   <a href="#getting-started"><img src="https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey?style=for-the-badge" alt="Windows" /></a>
-  <a href="https://github.com/titechprabhasolutions/Brahma-AI---Lite/actions"><img src="https://img.shields.io/badge/build-Manual-yellow?style=for-the-badge" alt="Build" /></a>
+  <a href="#how-it-works"><img src="https://img.shields.io/badge/architecture-modern-green?style=for-the-badge" alt="Architecture" /></a>
 </p>
 
 ---
 
 ## Overview
 
-Brahma AI - Lite is a premium-feeling local-first assistant for desktop users. It combines voice chat, automation, browser control, document workflows, and AI-driven screen analysis into a polished Windows application.
+Brahma AI - Lite delivers a polished AI assistant experience for Windows power users. It blends voice and typed chat with automation, productivity, office workflows, and intelligent screen-aware actions.
 
-- Voice and text interaction with Gemini + OpenRouter fallback
-- Startup daily briefing with live audio and interruption support
-- Full PC automation: launch apps, control windows, manage files
-- Office workflow generation for PowerPoint, Sheets, Word, and PDF
-- Website and landing page builder embedded in the workspace
-- Discord bridge, reminder workflows, meeting assistant, and notifications
+- Voice & text chat with Gemini and OpenRouter fallback
+- Startup daily briefing with seamless interruption support
+- Windows automation for apps, files, browser actions, and system control
+- Office workflow generation for PowerPoint, spreadsheets, Word, and PDF
+- Built-in website generation and Buildonaut studio support
+- Discord collaboration, notifications, reminders, and meeting assistance
 
 ## Features
 
 ### Intelligent Assistant
 
-- Real-time voice conversation and typed chat
-- Automatically speaks daily briefing on launch
-- Accepts interruption commands during briefing
-- Live AI backend with fallback handling for resilience
+- Voice and typed conversation in one desktop experience
+- Daily briefing playback at startup, delivered with premium TTS
+- Briefing interruption: new user commands stop audio instantly
+- Gemini-first live AI with OpenRouter fallback for reliability
 
-### Productivity & Automation
+### Automation & Productivity
 
-- Open and control Windows apps and system actions
-- Run browser automation flows with Playwright
-- Summarize screens, extract data, and generate content
-- Build documents, presentations, and exports on demand
+- Open apps, control windows, and automate desktop tasks
+- Browser automation using Playwright for web workflows
+- Screen analysis and content extraction from screenshots or camera
+- File handling, document generation, and utility workflows
 
 ### Office & Content Tools
 
-- Create and edit PowerPoint slides
-- Generate spreadsheets and Word documents
-- Produce PDFs and templated reports
-- Build polished front-end and full-stack website apps
+- Create PowerPoint slides and templated presentations
+- Generate spreadsheets and Word documents on demand
+- Export reports as PDFs with polished layouts
+- Launch website and landing page generation from the same app
 
 ### Integrations
 
-- Discord support for remote interaction
-- Local API key management for Gemini and OpenRouter
-- Config-driven settings for voice, notifications, and automation
+- Discord bridge for remote input and chat
+- Local API key management for Gemini + OpenRouter
+- Configurable app settings for voice, notifications, and startup
+
+## How It Works
+
+Brahma AI - Lite is built around a desktop runtime, a responsive UI, and an AI-backed session handler.
+
+- `main.py` starts the app, shows the UI, and runs `BrahmaLive`.
+- `BrahmaLive` connects to Gemini live audio sessions and sends typed or spoken commands.
+- The app uses `actions/` as tool modules for automation, document creation, web search, meeting support, and system control.
+- `AttentionMonitor` listens for notifications, toasts, and external events, then speaks alerts through Edge TTS.
+- `daily_briefing.py` composes the morning briefing text and plays it after boot.
+- The UI in `ui.py` provides the command bar, workspace results, and interactive dashboard controls.
+- If Gemini fails or rate-limits, OpenRouter is used as a fallback so the assistant stays responsive.
 
 ## Getting Started
 
-### Requirements
+### Prerequisites
 
 - Windows 10 or Windows 11
 - Python 3.11 or 3.12
+- `git` installed
 - Gemini API key
 - Optional OpenRouter API key
 
-### Install
+### 1. Clone the repository
+
+```powershell
+git clone https://github.com/titechprabhasolutions/Brahma-AI---Lite.git
+cd "Brahma AI - Lite"
+```
+
+### 2. Create and activate a Python virtual environment
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
 
 ```powershell
 pip install -r requirements.txt
 playwright install
 ```
 
-### Run
+### 4. Add your API keys
+
+Create `config/api_keys.json` with your keys:
+
+```json
+{
+  "gemini_api_key": "YOUR_GEMINI_API_KEY",
+  "openrouter_api_key": "YOUR_OPENROUTER_API_KEY"
+}
+```
+
+#### Gemini API Key
+
+- Create a Google Cloud or Gemini account
+- Enable Gemini API access and generate an API key
+- Paste the key into `gemini_api_key`
+
+#### OpenRouter API Key (optional)
+
+- Sign up at https://openrouter.ai
+- Generate an API key starting with `sk-or-`
+- Add it to `openrouter_api_key`
+
+### 5. Configure optional Discord integration
+
+If you want Discord support, fill `config/discord_bot.json` with your bot credentials and server settings.
+
+### 6. Launch the app
 
 ```powershell
 python main.py
 ```
 
-For a no-console Windows launch, use:
+For a silent Windows launch, run:
 
 ```powershell
 start_brahma.vbs
@@ -86,17 +140,23 @@ start_brahma.vbs
 
 ## Configuration
 
-- `config/api_keys.json` stores your API credentials
-- `config/discord_bot.json` stores Discord bot settings
-- `config/app_settings.json` stores app preferences and voice settings
+- `config/api_keys.json` — Gemini and OpenRouter credentials
+- `config/app_settings.json` — app preferences, voice settings, startup behavior
+- `config/discord_bot.json` — Discord bridge settings
+
+## Premium Setup Notes
+
+- Keep your `.venv` environment active when running the app
+- Use `start_brahma.vbs` for a cleaner Windows startup experience
+- Update `app_settings.json` to enable startup briefing, auto-launch, and voice preferences
 
 ## Project Structure
 
-- `main.py` — main runtime, AI session, and command routing
-- `ui.py` — desktop interface and visual controls
-- `actions/` — automation, voice, and workflow tools
-- `config/` — local settings, API keys, and app state
-- `tests/` — automated controller and integration tests
+- `main.py` — core runtime, AI session management, and engine glue
+- `ui.py` — desktop interface and workspace controls
+- `actions/` — modular tools for automation, messaging, document workflows, and more
+- `config/` — local key storage, app preferences, and runtime state
+- `tests/` — automated test coverage for controller and workflow behavior
 
 ## Recent Updates
 
@@ -110,6 +170,11 @@ start_brahma.vbs
 - Idle speech prompts added for better engagement.
 - Updated testing for Buildonaut controller workflows.
 
+## Community
+
+- Discord: https://discord.gg/gEYmJKKtq3
+- YouTube: https://www.youtube.com/@Buildonaut-AI
+
 ## License
 
 This project is distributed under the custom Brahma Source-Available License. See `LICENSE` for full terms and `TRADEMARK.md` for branding rules.
@@ -118,5 +183,5 @@ This project is distributed under the custom Brahma Source-Available License. Se
 
 Suryaansh Tiwari
 
-If you build on top of Brahma AI - Lite, please preserve attribution and keep secrets out of the repository.
+If you build on top of Brahma AI - Lite, preserve attribution and keep any secrets out of the repository.
 
