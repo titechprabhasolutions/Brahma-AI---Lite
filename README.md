@@ -97,8 +97,11 @@ Suryaansh Tiwari
 
 If you build on top of Brahma AI - Lite, please preserve attribution and keep secrets out of the repository.
 
-## Recent updates (2026-07-09)
+## Recent updates (2026-07-19)
 
+- Restored daily briefing playback on app launch so the assistant speaks the briefing automatically after startup.
+- Updated local TTS speech behavior to use the same male Edge voice (`en-US-GuyNeural`) for notifications, alerts, and briefing output.
+- Added interruption support so sending a message during daily briefing stops the briefing audio and lets Brahma answer immediately.
 - Gesture HUD redesign: the gesture control widget was reworked into a premium-style HUD (no raw camera preview). Hand landmark input is mapped to desktop cursor movement with configurable sensitivity, smoothing, and dead-zone, and supports multi-monitor primary displays.
 - Cursor mapping fixes: left/right/up/down mapping corrected and normalized hand coords map to full desktop extents (reach edges).
 - Idle speech: Brahma will emit a short, friendly voice prompt when idle (every ~4–5 minutes) to regain attention.
