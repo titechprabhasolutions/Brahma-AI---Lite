@@ -1,51 +1,60 @@
-# Brahma AI - Lite
+<p align="center">
+  <img src="assets/Brahma_Lite_Logo.png" alt="Brahma AI - Lite" width="240" />
+</p>
 
-Source-available desktop AI assistant for Windows, built and maintained by Suryaansh Tiwari.
+<h1 align="center">Brahma AI - Lite</h1>
 
-Brahma AI - Lite is a local-first assistant for voice commands, desktop automation, browser control, document generation, and screen-aware workflows. It is designed to help users interact with their computer in a natural way while keeping the experience lightweight and extensible.
+<p align="center">
+  <strong>Source-available Windows desktop AI assistant</strong> for voice, automation, productivity, and real-time workflows.
+</p>
 
-## What It Does
+<p align="center">
+  <a href="#features"><img src="https://img.shields.io/badge/features-voice%20AI%20%7C%20automation-blue?style=for-the-badge" alt="Features" /></a>
+  <a href="#getting-started"><img src="https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey?style=for-the-badge" alt="Windows" /></a>
+  <a href="https://github.com/titechprabhasolutions/Brahma-AI---Lite/actions"><img src="https://img.shields.io/badge/build-Manual-yellow?style=for-the-badge" alt="Build" /></a>
+</p>
 
-- Voice input and spoken responses
-- Text chat and command execution
-- App launching and desktop control
-- Browser automation and web search
-- Screen analysis and visual understanding
-- File handling and document workflows
-- Presentation, spreadsheet, Word, and PDF creation
-- Full-stack website and landing page generation
-- Notifications and meeting assistant workflows
-- Discord chat bridge for remote interaction
+---
 
-## Key Features
+## Overview
 
-### Assistant
+Brahma AI - Lite is a premium-feeling local-first assistant for desktop users. It combines voice chat, automation, browser control, document workflows, and AI-driven screen analysis into a polished Windows application.
 
-- Gemini-first conversation flow
-- OpenRouter fallback for resilience
-- Voice and text interaction
-- Multi-step task execution
+- Voice and text interaction with Gemini + OpenRouter fallback
+- Startup daily briefing with live audio and interruption support
+- Full PC automation: launch apps, control windows, manage files
+- Office workflow generation for PowerPoint, Sheets, Word, and PDF
+- Website and landing page builder embedded in the workspace
+- Discord bridge, reminder workflows, meeting assistant, and notifications
 
-### Automation
+## Features
 
-- Open apps and control Windows tasks
-- Manage files and folders
-- Run browser actions with Playwright
-- Analyze screenshots and camera input
-- Handle reminders, weather, and utility workflows
+### Intelligent Assistant
 
-### Office Tools
+- Real-time voice conversation and typed chat
+- Automatically speaks daily briefing on launch
+- Accepts interruption commands during briefing
+- Live AI backend with fallback handling for resilience
 
-- Create PowerPoint presentations
-- Create spreadsheets
-- Create and edit Word documents
-- Generate PDFs
-- Build polished frontend and backend website apps
+### Productivity & Automation
+
+- Open and control Windows apps and system actions
+- Run browser automation flows with Playwright
+- Summarize screens, extract data, and generate content
+- Build documents, presentations, and exports on demand
+
+### Office & Content Tools
+
+- Create and edit PowerPoint slides
+- Generate spreadsheets and Word documents
+- Produce PDFs and templated reports
+- Build polished front-end and full-stack website apps
 
 ### Integrations
 
-- Discord bot support
-- Local configuration files for API keys and settings
+- Discord support for remote interaction
+- Local API key management for Gemini and OpenRouter
+- Config-driven settings for voice, notifications, and automation
 
 ## Getting Started
 
@@ -58,65 +67,56 @@ Brahma AI - Lite is a local-first assistant for voice commands, desktop automati
 
 ### Install
 
-Install dependencies with pip install -r requirements.txt
-Then install browser support with playwright install
+```powershell
+pip install -r requirements.txt
+playwright install
+```
 
 ### Run
 
-Start the app with python main.py
+```powershell
+python main.py
+```
 
-On Windows, use start_brahma.vbs for a no-console launch.
+For a no-console Windows launch, use:
+
+```powershell
+start_brahma.vbs
+```
 
 ## Configuration
 
-API keys are stored locally in config/api_keys.json
-
-Discord bot settings are stored locally in config/discord_bot.json
+- `config/api_keys.json` stores your API credentials
+- `config/discord_bot.json` stores Discord bot settings
+- `config/app_settings.json` stores app preferences and voice settings
 
 ## Project Structure
 
-- main.py - assistant runtime and tool routing
-- ui.py - desktop interface
-- actions/ - automation and content-generation tools
-- config/ - local settings and API key storage
+- `main.py` — main runtime, AI session, and command routing
+- `ui.py` — desktop interface and visual controls
+- `actions/` — automation, voice, and workflow tools
+- `config/` — local settings, API keys, and app state
+- `tests/` — automated controller and integration tests
+
+## Recent Updates
+
+### 2026-07-19
+
+- Daily briefing now plays automatically at startup.
+- Local TTS unified to the same male Edge voice for alerts, briefing, and notifications.
+- User messages sent during briefing now interrupt the audio and receive immediate attention.
+- Gesture HUD redesigned for premium control with hand landmark navigation.
+- Cursor mapping fixes improved desktop reach and direction accuracy.
+- Idle speech prompts added for better engagement.
+- Updated testing for Buildonaut controller workflows.
 
 ## License
 
-This project is distributed under the custom Brahma Source-Available License.
-See the LICENSE file for the full terms and the Trademark Notice in TRADEMARK.md.
-
-Summary:
-
-- You may use and modify the software for personal or internal use.
-- You may share unmodified copies with notices intact.
-- You may not rebrand, rename, or republish the software as your own product.
+This project is distributed under the custom Brahma Source-Available License. See `LICENSE` for full terms and `TRADEMARK.md` for branding rules.
 
 ## Maintainer
 
 Suryaansh Tiwari
 
 If you build on top of Brahma AI - Lite, please preserve attribution and keep secrets out of the repository.
-
-## Recent updates (2026-07-19)
-
-- Restored daily briefing playback on app launch so the assistant speaks the briefing automatically after startup.
-- Updated local TTS speech behavior to use the same male Edge voice (`en-US-GuyNeural`) for notifications, alerts, and briefing output.
-- Added interruption support so sending a message during daily briefing stops the briefing audio and lets Brahma answer immediately.
-- Gesture HUD redesign: the gesture control widget was reworked into a premium-style HUD (no raw camera preview). Hand landmark input is mapped to desktop cursor movement with configurable sensitivity, smoothing, and dead-zone, and supports multi-monitor primary displays.
-- Cursor mapping fixes: left/right/up/down mapping corrected and normalized hand coords map to full desktop extents (reach edges).
-- Idle speech: Brahma will emit a short, friendly voice prompt when idle (every ~4–5 minutes) to regain attention.
-- Removed the old `actions/website_builder.py` and its planner/executor references; website-building now uses an external workspace controller and scaffolding.
-- New testing: `tests/test_buildonaut_controller.py` verifies the controller API for creating, listing, and starting a project preview.
-
-## How to apply these changes to GitHub (example)
-
-From the project root run:
-
-```powershell
-git add README.md
-git commit -m "docs: add recent updates (Buildonaut integration, gesture HUD, idle speech)"
-git push origin HEAD
-```
-
-If `git push` fails due to credentials, use your normal Git auth flow (SSH keys, PAT, or credential manager) and re-run the push command.
 
